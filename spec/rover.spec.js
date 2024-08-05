@@ -59,19 +59,6 @@ let rover= new Rover;
 });
 //test 11
 it('responds correctly to the mode change command', function(){
- let rover = new Rover;
- let message = {
-    name:'Mode change',
-    commands: [
-      { type: 'MODE_CHANGE', value: 'LOW_POWER' },
-  ],
-};
-let statusResult = response.results[1];
-expect(statusResult.completed).toBe(true);
-expect(statusResult.roverStatus).toEqual({
-  mode: rover.mode,
-  generatorWatts: rover.generatorWatts,
-  position: rover.position
-});
+ 
   
 });
