@@ -9,9 +9,13 @@ constructor(position){
 receiveMessage(message) {
   let results = [];
   for (let command of message.commands){
-    if(command.commandType === 'MOVE') {
-    this.position = command.value;
-     results.push({ completed: true });
+    if (command.commandType === 'MOVE') {
+    if (this.mode === 'LOW_POWER') {
+     results.push({ completed: false });
+    } else {
+      this.position = command.value;
+      results.push({ completed: true });
+      }
   } else if (command.commandType === 'STATUS_CHECK'){
     results.push({
     completed: true,
@@ -32,6 +36,9 @@ receiveMessage(message) {
   message: message.name,
   results: results
   };
-}
+  
 };
+};
+
+
 module.exports = Rover;
