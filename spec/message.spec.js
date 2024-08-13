@@ -11,14 +11,10 @@ it("throws error if a name is NOT passed into the constructor as the first param
 });
 // test 5
 it("constructor sets name", function(){
-    let name = "Test message with two commands";
+    let name = "Test message";
     let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
-    let message = new Message('Test message with two commands', commands);
-    if (message.name === name){
-        console.log('Test passed : Constructor sets name');
-    } else {
-        console.log("Test failed: Constructor does not set name correctly");
-    }
+    let message = new Message('Test message', commands);
+    expect(message.name).toEqual('Test message');
     
 
 });
@@ -32,6 +28,7 @@ it("contains a commands array passed into the constructor as the 2nd argument", 
         console.error('Test failed: commands array not passed correctly');
 
         }
+        expect(message.commands).toEqual(commands);
 });
 
 
