@@ -1,5 +1,5 @@
 class Message {
-   // Write code here!
+   // Write code here
    constructor(name, commands){
       this.name = name;
       if (!name) {

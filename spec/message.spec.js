@@ -23,12 +23,11 @@ it("contains a commands array passed into the constructor as the 2nd argument", 
    let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
    let message = new Message('Test message with two commands', commands);
     if (message.commands === commands) {
-        console.log("Test passed: Contains commands array");
-     } else { 
-        console.error('Test failed: commands array not passed correctly');
-
-        }
-        expect(message.commands).toEqual(commands);
+   console.log("Test passed: Contains commands array");
+    } else { 
+    console.error('Test failed: commands array not passed correctly');
+   }
+   expect(message.commands).toEqual(commands);
 });
 
 

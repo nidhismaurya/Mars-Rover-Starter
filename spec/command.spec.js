@@ -9,7 +9,7 @@ describe("Command class", function() {
     expect( function() { new Command();}).toThrow(new Error('Command type required.'));
   });
 
-//});
+
 // test 2
 it("constructor sets command type", function() {
   let command = new Command('STATUS_CHECK');

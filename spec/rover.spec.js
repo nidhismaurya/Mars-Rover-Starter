@@ -80,8 +80,8 @@ it('responds with the position for the move command', function(){
   let rover = new Rover(0); 
   let newPosition = 12345
   let message = {
-    name: 'TestMoveMessage',
-    commands: [{ commandType: 'MOVE', value: newPosition }]
+   name: 'TestMoveMessage',
+   commands: [{ commandType: 'MOVE', value: newPosition }]
     };
   let response = rover.receiveMessage(message);
   if (rover.position !== newPosition)
